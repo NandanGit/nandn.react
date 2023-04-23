@@ -9,7 +9,11 @@ import { InputProps } from './types';
 export const Input: FC<InputProps> = ({ type = 'text', ...restInputProps }) => {
   return (
     <div>
-      <input type={type} {...restInputProps} />
+      <input
+        type={type}
+        {...restInputProps}
+        onChange={e => console.log('Changed:', e.target.value)}
+      />
     </div>
   );
 };
