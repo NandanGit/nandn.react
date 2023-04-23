@@ -37,7 +37,7 @@ export type $Validator =
   | ((value: string, ...args: any[]) => $ValidatorResult | boolean);
 
 export interface iValidator {
-  type: $BuiltInValidatorType | string;
+  name: $BuiltInValidatorType | string;
   message?: string | ((value: string) => string);
   validator?: $Validator;
   args?: any[];

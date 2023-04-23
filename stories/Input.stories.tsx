@@ -53,7 +53,7 @@ export const Text = createStory({
   validators: [
     /^d/,
     {
-      type: 'startsWithSmallerCaseD',
+      name: 'startsWithSmallerCaseD',
       validator: /^d/,
       message: 'Must start with a lowercase d',
     },
