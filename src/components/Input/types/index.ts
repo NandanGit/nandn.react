@@ -4,7 +4,7 @@ import { allowedInputTypes, builtInValidatorTypes } from '../constants';
 export interface InputProps extends HTMLAttributes<HTMLDivElement> {
   type?: $InputType;
   value?: string;
-  validators?: $Validators;
+  validators?: $Validator[];
 
   // HTML Validators
   required?: boolean;
@@ -32,15 +32,16 @@ export type $ValidatorResult =
   | iValidatorSuccessResult
   | iValidatorFailureResult;
 
-export type $Validator =
-  | RegExp
-  | ((value: string, ...args: any[]) => $ValidatorResult | boolean);
+export type $ValidationFunction = (
+  value: string,
+  ...args: any[]
+) => $ValidatorResult | boolean;
 
 export interface iValidator {
   name: $BuiltInValidatorType | string;
   message?: string | ((value: string) => string);
-  validator?: $Validator;
+  validator?: RegExp | $ValidationFunction;
   args?: any[];
   options?: iValidatorOptions;
 }
-export type $Validators = ($BuiltInValidatorType | iValidator | RegExp)[];
+export type $Validator = $BuiltInValidatorType | iValidator | RegExp;
