@@ -1,8 +1,5 @@
-import {
-  $BuiltInValidatorType,
-  $ValidatorResult,
-  builtInValidatorTypes,
-} from '.';
+import { $BuiltInValidatorType, $ValidatorResult } from '.';
+import { builtInValidatorTypes } from '../constants';
 
 export const isBuiltInValidatorType = (
   type: string

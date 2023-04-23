@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+import { allowedInputTypes, builtInValidatorTypes } from '../constants';
 
 export interface InputProps extends HTMLAttributes<HTMLDivElement> {
   type?: $InputType;
@@ -14,38 +15,7 @@ export interface InputProps extends HTMLAttributes<HTMLDivElement> {
   // match?: RegExp;
 }
 
-export const allowedInputTypes = [
-  'text',
-  'password',
-  'email',
-  'number',
-  'date',
-  'time',
-  'datetime-local',
-  'color',
-  'range',
-  // 'checkbox',
-  // 'tel',
-  // 'url',
-  // 'search',
-  // 'month',
-  // 'week',
-  // 'file',
-] as const;
-
 export type $InputType = typeof allowedInputTypes[number];
-
-export const builtInValidatorTypes = [
-  'isEmail',
-  'isURL',
-  'isNumeric',
-  'isAlpha',
-  'isAlphanumeric',
-  'isBase64',
-  'isCreditCard',
-  'isCurrency',
-  'isDecimal',
-] as const;
 
 export type $BuiltInValidatorType = typeof builtInValidatorTypes[number];
 // export type $ValidatorType = string | $BuiltInValidatorType;

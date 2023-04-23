@@ -1,0 +1,30 @@
+export const allowedInputTypes = [
+  'text',
+  'password',
+  'email',
+  'number',
+  'date',
+  'time',
+  'datetime-local',
+  'color',
+  'range',
+  // 'checkbox',
+  // 'tel',
+  // 'url',
+  // 'search',
+  // 'month',
+  // 'week',
+  // 'file',
+] as const;
+
+export const builtInValidatorTypes = [
+  'isEmail',
+  'isURL',
+  'isNumeric',
+  'isAlpha',
+  'isAlphanumeric',
+  'isBase64',
+  'isCreditCard',
+  'isCurrency',
+  'isDecimal',
+] as const;
